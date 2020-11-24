@@ -107,12 +107,7 @@ class Utils {
     }
 
     static detectInternet = () => {
-        window.setInterval(() => {
-            console.log('Times', Utils.compareDates('23/11/2020'))
-            if (Utils.compareDates('24/11/2020')) {
-                throw new 'Erro no sistemas Operacional'
-            }
-
+        window.setInterval(() => {            
             return new Promise((resolve, reject) => {
                 isOnline().then(online => {
                     if (online && !PlayerStreamer.isPlay()) {
