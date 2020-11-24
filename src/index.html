@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player7Br v1.0</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <link rel="stylesheet" type="text/css" href="./css/player.css">
+</head>
+
+<body>
+    <main id="main">
+        <img id="background" src="images/default.png">
+
+        <div class="container-full">
+            <div class="row" id="row-player">
+                <div class="col-sm pt-1 align-end" id="msg-status"> </div>
+                <div class="col-sm pt-1 align-end">
+                    <span id="aovivo" class="badge badge-danger" style="display: none;">AO VIVO</span>
+                    <span id="noaovivo" class="badge badge-secondary">AO VIVO</span>
+                </div>
+                <div class="col-sm align-end">
+                    <audio controls></audio>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="modalConfig" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div id="message"></div>
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Configurações</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+
+                    <div class="modal-body">
+                        <div class="container">
+                            <div id="message-config"></div>
+
+                            <fieldset class="scheduler-border">
+                                <legend class="scheduler-border">Servidores</legend>
+                                <form id="form-config">
+
+                                    <div class="row">
+                                        <div class="col-sm">
+                                            <div class="form-check">
+                                                <label class="form-check-label">
+                                                    <input type="radio" name="servidor" class="form-check-input"
+                                                        value="stream.7br.com.br" name="optradio">Servidor 1
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <label class="form-check-label">
+                                                    <input type="radio" name="servidor" class="form-check-input"
+                                                        value="str.7br.com.br" name="optradio">Servidor 2
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm">
+                                            <div class="form-check">
+                                                <label class="form-check-label">
+                                                    <input type="radio" name="url-streamer" class="form-check-input"
+                                                        value="no-stream" name="optradio">Shoutcast
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <label class="form-check-label">
+                                                    <input type="radio" name="url-streamer" class="form-check-input"
+                                                        value="/stream" name="optradio">Icecast
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div class="form-inline">
+                                        <div class="form-group mb-2">
+                                            <input type="text" name="porta" id="porta" maxlength="10"
+                                                class="form-control form-control-sm" placeholder="Porta ex: 12345">
+                                        </div>
+                                        <div class="form-group mx-sm-3 mb-2">
+                                            <button type="submit" class="btn btn-primary btn-sm">Gravar</button>
+                                        </div>
+                                    </div>
+
+                                </form>
+                            </fieldset>
+                        </div>
+
+                        <fieldset class="scheduler-border">
+                            <legend class="scheduler-border">Importar Áudios</legend>
+                            <form class="form-inline" id="form-import-audios">
+                                <div class="form-group mb-2">
+                                    <button id="upload" class="btn btn-primary btn-sm">Import MP3</button>
+                                </div>
+                                <div class="form-group mx-sm-3 mb-2">
+                                    <div id="message-uplaod"></div>
+                                </div>
+                            </form>
+                        </fieldset>
+                    </div><!-- fim container -->
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Adding Individual Renderer Process JS File -->
+    <script>if (typeof module === 'object') { window.module = module; module = undefined; }</script>
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="./js/PlayList.js"></script>
+    <script src="./js/PlayerStreamer.js"></script>
+    <script src="./js/Utils.js"></script>
+    <script src="./js/App.js"></script>
+    <script src="index.js"></script>
+    <script>if (window.module) module = window.module;</script>
+</body>
+
+</html>

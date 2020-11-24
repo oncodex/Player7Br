@@ -1,0 +1,29 @@
+{
+  "name": "playre7br",
+  "version": "1.0.0",
+  "description": "Player que ler streamer online e audios locais",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build-win32": "electron-packager . --overwrite --asar --platform=win32 --arch=ia32 --icon=src/icons/icon.ico --prune=true --out=dist --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"player7br\"",
+    "build-win": "electron-packager . --overwrite --asar --platform=win32 --arch=x64 --icon=src/icons/icon.ico --prune=true --out=dist --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"player7br\"",
+    "build-linux": "electron-packager . --overwrite --asar --platform=linux --arch=x64  --icon=src/icons/icon.ico --prune=true --out=dist --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"player7br\""
+  },
+  "keywords": [
+    "electron"
+  ],
+  "author": "Orlando Neto",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^4.5.3",
+    "electron-reload": "^1.5.0",
+    "glob": "^7.1.6",
+    "is-online": "^9.0.0",
+    "jquery": "^3.5.1",
+    "node-fetch": "^2.6.1",
+    "resize-img": "^2.0.0"
+  },
+  "devDependencies": {
+    "electron": "^10.1.5"
+  }
+}
